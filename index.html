@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f766e">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<title>Ruta ITID · UTOM</title>
+<style>
+:root{--bg:#f6f8f7;--card:#fff;--tx:#14221f;--mute:#5b6b67;--br:#dbe4e1;--pri:#0f766e;--pri2:#ccfbf1;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--c-prog:#2563eb;--c-red:#d97706;--c-dat:#7c3aed;--c-mat:#db2777;--c-ing:#0891b2;--c-soft:#16a34a;--c-proy:#dc2626}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#0c1513;--card:#142320;--tx:#e8f2ef;--mute:#9bb0ab;--br:#254039;--pri:#2dd4bf;--pri2:#134e4a}}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#0c1513;--card:#142320;--tx:#e8f2ef;--mute:#9bb0ab;--br:#254039;--pri:#2dd4bf;--pri2:#134e4a}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;padding-bottom:76px}
+header{background:linear-gradient(135deg,#0f766e,#134e4a);color:#fff;padding:28px 20px 24px}
+header h1{margin:0 0 6px;font-size:1.6rem;line-height:1.2}
+header p{margin:0;opacity:.9}
+main{max-width:760px;margin:0 auto;padding:16px}
+section{display:none}section.on{display:block}
+.card{background:var(--card);border:1px solid var(--br);border-radius:14px;padding:16px;margin:0 0 12px}
+h2{font-size:1.2rem;margin:4px 0 12px}
+h3{margin:0 0 4px;font-size:1rem}
+.mute{color:var(--mute);font-size:.9rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px}
+.stat{text-align:center;background:var(--pri2);border-radius:12px;padding:12px}
+.stat b{display:block;font-size:1.4rem;color:var(--pri)}
+.btn{background:var(--pri);color:#fff;border:0;border-radius:10px;padding:10px 16px;font:inherit;font-weight:600;cursor:pointer}
+:root[data-theme="dark"] .btn,:root:not([data-theme="light"]) .btn{color:#06201c}
+.tabs{display:flex;gap:6px;overflow-x:auto;padding-bottom:8px;margin-bottom:8px}
+.tabs button{flex:0 0 auto;border:1px solid var(--br);background:var(--card);color:var(--tx);border-radius:20px;padding:6px 12px;font:inherit;font-size:.85rem;cursor:pointer}
+.tabs button.on{background:var(--pri);color:#fff;border-color:var(--pri)}
+.sub{display:flex;justify-content:space-between;gap:8px;align-items:center;padding:9px 0 9px 10px;border-bottom:1px solid var(--br);border-left:4px solid var(--k)}
+.sub:last-child{border-bottom:0}
+.sub small{color:var(--mute);white-space:nowrap}
+.p{--k:var(--c-prog)}.r{--k:var(--c-red)}.d{--k:var(--c-dat)}.m{--k:var(--c-mat)}.i{--k:var(--c-ing)}.s{--k:var(--c-soft)}.y{--k:var(--c-proy)}
+.leg{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 10px}
+.leg span{font-size:.75rem;padding:2px 8px;border-radius:10px;border:1px solid var(--k);color:var(--tx)}
+input[type=search]{width:100%;padding:10px 12px;border:1px solid var(--br);border-radius:10px;background:var(--card);color:var(--tx);font:inherit;margin-bottom:10px}
+.chk{display:flex;gap:10px;align-items:flex-start;padding:8px 0}
+.chk input{width:20px;height:20px;margin-top:2px;accent-color:var(--pri)}
+.bar{height:10px;background:var(--br);border-radius:6px;overflow:hidden;margin:6px 0 12px}
+.bar i{display:block;height:100%;background:var(--pri);width:0;transition:width .3s}
+nav{position:fixed;left:0;right:0;bottom:0;display:flex;background:var(--card);border-top:1px solid var(--br);padding-bottom:env(safe-area-inset-bottom,0px)}
+nav button{flex:1;border:0;background:none;color:var(--mute);padding:8px 2px;font:inherit;font-size:.72rem;cursor:pointer}
+nav button b{display:block;font-size:1.25rem;font-weight:400}
+nav button.on{color:var(--pri);font-weight:700}
+.tl{border-left:3px solid var(--pri);margin-left:6px;padding-left:14px}
+.tl div{margin-bottom:14px}
+</style>
+</head>
+<body>
+<header>
+<h1>Tu ruta en Ingeniería en TI e Innovación Digital</h1>
+<p>UTOM · Universidad Tecnológica del Oriente de Michoacán · Plan vigente desde sept. 2024</p>
+</header>
+<main>
+
+<section id="inicio" class="on">
+<div class="card"><h2>¡Bienvenido/a!</h2>
+<p>Esta guía te muestra qué aprenderás en cada cuatrimestre, qué podrás construir, cómo se organiza tu camino de TSU a Ingeniería y cómo prepararte desde hoy.</p>
+<button class="btn" id="inst" hidden>Instalar app</button></div>
+<div class="grid">
+<div class="stat"><b>10</b>cuatrimestres</div>
+<div class="stat"><b>5,400</b>horas totales</div>
+<div class="stat"><b>337.5</b>créditos</div>
+<div class="stat"><b>2</b>estadías</div>
+</div>
+<div class="card" style="margin-top:12px"><h2>Lo que podrás hacer</h2>
+<p>💻 Desarrollar apps web, móviles y multiplataforma.<br>🌐 Configurar redes y administrar servidores.<br>🤖 Crear soluciones con inteligencia artificial y ciencia de datos.<br>📡 Conectar dispositivos con Internet de las Cosas.<br>🔐 Proteger sistemas con seguridad informática e informática forense.<br>👥 Liderar equipos y gestionar proyectos de tecnología.</p></div>
+<div class="card"><h2>Informes e inscripciones</h2><p>Tel. <a href="tel:4471508913">447-150-8913</a> · <a href="https://www.utom.edu.mx" target="_blank" rel="noopener">www.utom.edu.mx</a></p></div>
+</section>
+
+<section id="plan">
+<h2>Mapa curricular</h2>
+<input type="search" id="q" placeholder="Buscar materia (ej. redes, IA, bases de datos)">
+<div class="leg" id="leg"></div>
+<div class="tabs" id="tabs"></div>
+<div class="card" id="list"></div>
+</section>
+
+<section id="ruta">
+<h2>Tu camino de formación</h2>
+<div class="tl">
+<div><h3>Ciclo 1 · Cuatrimestres 1–3</h3><span class="mute">1,575 h · 98.43 créditos. Bases: matemáticas, programación, redes, bases de datos y tu primer Proyecto Integrador.</span></div>
+<div><h3>Ciclo 2 · Cuatrimestres 4–6</h3><span class="mute">1,650 h · 103.12 créditos. Apps web y móviles, análisis y diseño de software, y calidad. Cierras con la Estadía de TSU en Desarrollo de Software Multiplataforma (600 h).</span></div>
+<div><h3>Ciclo 3 · Cuatrimestres 7–10</h3><span class="mute">2,175 h · 135.93 créditos. IA, ciencia de datos, IoT, seguridad, servidores, gestión de proyectos, 3 optativas y la Estadía de Ingeniería (600 h).</span></div>
+</div>
+<div class="card"><h3>🎓 Estadías</h3><p class="mute">En el 6.º y 10.º cuatrimestre trabajas en una empresa u organización aplicando todo lo aprendido: es tu puente al mundo laboral.</p></div>
+<div class="card"><h3>🧩 Proyectos Integradores</h3><p class="mute">Cada ciclo incluye un proyecto (cuatrimestres 3, 5 y 9) donde juntas varias materias para resolver un problema real. Ideal para tu portafolio.</p></div>
+<div class="card"><h3>🗣️ Inglés en 8 niveles</h3><p class="mute">Inglés I a VIII a lo largo de la carrera: la tecnología se documenta y se trabaja en inglés.</p></div>
+</section>
+
+<section id="prep">
+<h2>Prepárate desde hoy</h2>
+<div class="card"><b id="pct">0%</b> completado<div class="bar"><i id="pb"></i></div><div id="chks"></div></div>
+<div class="card"><h3>Participa</h3><p class="mute">Entra a proyectos, concursos y eventos de tecnología de tu universidad, forma equipo con compañeros y pregunta a tus docentes por oportunidades de vinculación. Cada proyecto suma a tu portafolio.</p></div>
+</section>
+
+</main>
+<nav id="nav">
+<button data-t="inicio" class="on"><b>🏠</b>Inicio</button>
+<button data-t="plan"><b>📚</b>Materias</button>
+<button data-t="ruta"><b>🧭</b>Ruta</button>
+<button data-t="prep"><b>✅</b>Prepárate</button>
+</nav>
+<script>
+var CATS={p:"Programación",r:"Redes y sistemas",d:"Datos e IA",m:"Matemáticas",i:"Inglés",s:"Habilidades y gestión",y:"Proyectos"};
+var C=[
+["1.º",[["Inglés I",75,"i"],["Desarrollo Humano y Valores",60,"s"],["Fundamentos Matemáticos",105,"m"],["Fundamentos de Redes",60,"r"],["Física",90,"m"],["Fundamentos de Programación",60,"p"],["Comunicación y Habilidades Digitales",75,"s"]]],
+["2.º",[["Inglés II",75,"i"],["Habilidades Socioemocionales y Manejo de Conflictos",60,"s"],["Cálculo Diferencial",90,"m"],["Conmutación y Enrutamiento de Redes",75,"r"],["Probabilidad y Estadística",75,"m"],["Programación Estructurada",75,"p"],["Sistemas Operativos",75,"r"]]],
+["3.º",[["Inglés III",75,"i"],["Desarrollo del Pensamiento y Toma de Decisiones",60,"s"],["Cálculo Integral",60,"m"],["Tópicos de Calidad para el Diseño de Software",90,"p"],["Bases de Datos",75,"d"],["Programación Orientada a Objetos",105,"p"],["Proyecto Integrador I",60,"y"]]],
+["4.º",[["Inglés IV",75,"i"],["Ética Profesional",60,"s"],["Cálculo de Varias Variables",75,"m"],["Aplicaciones Web",75,"p"],["Estructura de Datos",75,"p"],["Desarrollo de Aplicaciones Móviles",90,"p"],["Análisis y Diseño de Software",75,"p"]]],
+["5.º",[["Inglés V",75,"i"],["Liderazgo de Equipos de Alto Desempeño",60,"s"],["Ecuaciones Diferenciales",75,"m"],["Aplicaciones Web Orientadas a Servicios",75,"p"],["Bases de Datos Avanzadas",75,"d"],["Estándares y Métricas para el Desarrollo de Software",90,"p"],["Proyecto Integrador II",60,"y"]]],
+["6.º",[["Estadía · Técnico Superior Universitario en Desarrollo de Software Multiplataforma",600,"y"]]],
+["7.º",[["Inglés VI",75,"i"],["Habilidades Gerenciales",60,"s"],["Formulación de Proyectos de Tecnología",60,"s"],["Fundamentos de Inteligencia Artificial",90,"d"],["Ética y Legislación en Tecnologías de la Información",60,"s"],["Optativa I",90,"s"],["Seguridad Informática",90,"r"]]],
+["8.º",[["Inglés VII",75,"i"],["Electrónica Digital",75,"r"],["Gestión de Proyectos de Tecnología",60,"s"],["Programación para Inteligencia Artificial",90,"d"],["Administración de Servidores",75,"r"],["Optativa II",90,"s"],["Informática Forense",75,"r"]]],
+["9.º",[["Inglés VIII",75,"i"],["Internet de las Cosas",75,"r"],["Evaluación de Proyectos de Tecnología",60,"s"],["Ciencia de Datos",90,"d"],["Tecnologías Disruptivas",75,"d"],["Optativa III",90,"s"],["Proyecto Integrador III",60,"y"]]],
+["10.º",[["Estadía · Licenciatura en Ingeniería en Tecnologías de la Información e Innovación Digital",600,"y"]]]
+];
+var cur=0,$=function(i){return document.getElementById(i)};
+$("leg").innerHTML=Object.keys(CATS).map(function(k){return '<span class="'+k+'">'+CATS[k]+'</span>'}).join("");
+$("tabs").innerHTML=C.map(function(c,i){return '<button data-i="'+i+'">'+c[0]+'</button>'}).join("");
+function draw(){
+  var q=$("q").value.trim().toLowerCase(),h="";
+  if(q){C.forEach(function(c){c[1].forEach(function(s){if(s[0].toLowerCase().indexOf(q)>-1||CATS[s[2]].toLowerCase().indexOf(q)>-1)h+=row(s,c[0])})});
+    h=h||'<p class="mute">Sin resultados.</p>';
+  }else{h='<h3>'+C[cur][0]+' cuatrimestre</h3>'+C[cur][1].map(function(s){return row(s)}).join("");}
+  $("list").innerHTML=h;
+  document.querySelectorAll("#tabs button").forEach(function(b){b.className=(!q&&+b.dataset.i===cur)?"on":""});
+}
+function row(s,t){return '<div class="sub '+s[2]+'"><span>'+s[0]+(t?' <small>('+t+')</small>':'')+'</span><small>'+s[1]+' h</small></div>'}
+$("tabs").onclick=function(e){if(e.target.dataset.i){cur=+e.target.dataset.i;$("q").value="";draw()}};
+$("q").oninput=draw;draw();
+$("nav").onclick=function(e){var b=e.target.closest("button");if(!b)return;
+  document.querySelectorAll("section").forEach(function(s){s.className=s.id===b.dataset.t?"on":""});
+  document.querySelectorAll("nav button").forEach(function(x){x.className=x===b?"on":""});scrollTo(0,0)};
+var T=["Repasar álgebra y aritmética básica","Practicar inglés a diario (videos, docs, juegos)","Crear cuenta en GitHub","Escribir mi primer programa (Python o JavaScript)","Instalar un editor de código (VS Code)","Aprender a usar la terminal","Armar mi correo y perfil profesional","Conocer a mis compañeros y docentes","Elegir un proyecto personal pequeño"],S={};
+try{S=JSON.parse(localStorage.getItem("itid")||"{}")}catch(e){}
+function chk(){$("chks").innerHTML=T.map(function(t,i){return '<label class="chk"><input type="checkbox" data-i="'+i+'"'+(S[i]?' checked':'')+'><span>'+t+'</span></label>'}).join("");
+  var n=T.filter(function(_,i){return S[i]}).length,p=Math.round(n*100/T.length);$("pct").textContent=p+"%";$("pb").style.width=p+"%"}
+$("chks").onchange=function(e){S[e.target.dataset.i]=e.target.checked;try{localStorage.setItem("itid",JSON.stringify(S))}catch(x){}chk()};chk();
+var dp;addEventListener("beforeinstallprompt",function(e){e.preventDefault();dp=e;$("inst").hidden=false});
+$("inst").onclick=function(){if(dp){dp.prompt();dp=null;$("inst").hidden=true}};
+if("serviceWorker" in navigator){try{navigator.serviceWorker.register("sw.js").catch(function(){})}catch(e){}}
+</script>
+</body>
+</html>
